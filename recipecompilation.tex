@@ -1,0 +1,53 @@
+\documentclass{article}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage[%
+    %a5paper,
+    papersize={5.5in,8.5in},
+    margin=0.75in,
+    top=0.75in,
+    bottom=0.75in,
+    %twoside
+    ]{geometry}
+
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{recipes}
+
+\raggedcolumns
+\setlength{\multicolsep}{0pt}
+\setlength{\columnseprule}{1pt}
+
+\makeatletter
+
+\newif\if@mainmatter \@mainmattertrue
+
+%% Borrowed from book.cls
+\newcommand\frontmatter{%
+    \cleardoublepage
+  \@mainmatterfalse
+  \pagenumbering{roman}}
+\newcommand\mainmatter{%
+    \cleardoublepage
+  \@mainmattertrue
+  \pagenumbering{arabic}}
+\makeatother
+
+%% Vary the colors at will
+
+\definecolor{vegcolor}{rgb}{0,0.5,0.2}
+\definecolor{frzcolor}{rgb}{0,0,1}
+
+% Your "recipes.sty" package starts here:
+%% Thanks to alephzero for the excellent start:
+
+
+\begin{document}
+
+\frontmatter
+
+\mainmatter
+
+\input{./bread/weissman/milkbuns.tex}
+
+\end{document}
